@@ -50,21 +50,23 @@
       <img src="remera.jpg" alt="Producto 1">
       <h2>Producto 1</h2>
       <p>Precio: $20</p>
-      <button onclick="agregarAlCarrito(20)">Agregar al carrito</button>
+      <button onclick="myFunction({ nombre:'remera', precio: 20})">Agregar al carrito</button>
     </div>
 
     <div class="producto">
       <img src="pantalon.jpg" alt="Producto 2">
       <h2>Producto 2</h2>
       <p>Precio: $30</p>
-      <button onclick="agregarAlCarrito(30)">Agregar al carrito</button>
+      <button onclick="myFunction({ nombre:'pantalon', precio: 30})">Agregar al carrito</button>
+
     </div>
 
-    <div id="carrito">
-      <h2>Carrito de compras</h2>
-      <ul></ul>
-      <p>Total: <span id="total"></span></p>
-    </div>
+    <div class="carrito" id="carrito">
+      <h2>Carrito de compras</h2> <br>
+      <button onclick="mostrarCarrito()">Mostrar carrito</button>
+      <button onclick="vaciarCarrito()">Vaciar carrito</button>
+      <button onclick="confirmarCompra()">Comprar</button>
+       </div>
 
     <script src="script.js"></script>
   </body>
