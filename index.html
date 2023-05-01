@@ -1,199 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="refresh" content="segundos;url=https://www.instagram.com/onlib_/"/>
-    <!-- font awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <!-- owl carousel -->
-   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-   <!--fonts   -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-   
-   <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Inicio</title>
-  </head>
-  <body>
-   
-    <!--menu-->
-    <div class="main-container nav-bg-color">
-      <div class="inside-container nav-contain">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-          <img src="logo.png" class="img-fluid" alt="">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav nav-list ml-auto">
-	         
-	            <a class="menu" href="#"> NOSOTROS</a>
-	            <a class="menu" href="#">MUJER</a>
-                <a class="menu" href="#">HOMBRE</a>
-	            <a class="menu" href="#">CERRAR SESIÓN</a>
-	             
-              <a class="menu icon-color last-spc" href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
-             <a class="menu icon-color last-spc" href="#"><i class="fas fa-search"></i></a>
-             
-	           
-          </div>
-         </div>
-        </nav>
-        </div>
-     </div> 
-<!--carousel-->
-  <div class="main-container carousel-height">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">            
-      <div class="carousel-inner">
-        <div class="carousel-item active first-slider">
-          <div class="inside-container">
-            <div class="row">
-              <div class="col-lg-12  ">
-                <div class="carousel-text">
-                  <h1>COMPRA <span class="second">EN SEGUNDOS</span> TU ROPA </h1>
-                  <div class="butns">
-                    <button class="about-btn"> 
-                      <a href="carrito.html" onclick="levantardatos();"> COMPRA AHORA! </a>	
-                      </button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATTIRE</title>
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
-                    
-            
-                  </div>
-                </div>
-              </div> 
+
+<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <header>
+        <div class="container-fluid color">
+            <nav class="navbar navbar-expand-lg">
+              <div>
+                <a href="index.html"><img src="logo.png" class="logo" alt=""></a>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse margin" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link texto" aria-current="page" href="#">Hombre</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link texto" href="#">Mujer</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link texto" href="#">Contacto</a>
+                      </li>
+                    </ul>
+
+                   <button id="boton-carrito">Mis compras</i></button>
+
+    
+    
+        </header>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="ropa.jpg" class="d-block w-100 img-fluid" alt="...">
+  <div class="centrado">
+    <h1 data-aos="fade-left">Especialistas en ropa</h1>
+    <h3 class="h3 mt-5" data-aos="fade-right">Compra seguro y la mejor calidad</h3>
+  </div>
             </div>
           </div>
-        </div>  
- 
+      </div>
+
+     
+      <div style="margin-left: 12%;" data-aos="fade-up">
+      <h2 class="tipografia">Productos</h2>
+    </div>
+
+    <main id="contenedor-servicios" data-aos="fade-up">
      
 
-<!--our team secion-->
+    </main>
 
-<div class="main-container">
-  <div class="inside-container"> 
-    <div class="row">
-      <div class="col-12 our-header">
-          <h2> ¿Que hacemos?</h2>
-        <div  class="text-center">
-            <hr> <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i> <hr > 
+
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Mis compras</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+            </div>
+            <p class="precioServicio">Precio total: $<span id="precioTotal">0</span></p>
+            <button id="vaciar-carrito" class="boton-agregar">Vaciar</button>
         </div>
-      </div> 
     </div>
-   <div class="row row-pad">
-          <div class=" col-sm-6 col-md-3  our-spec">
-            <div class="text-center">
-                <i class="far fa-thumbs-up rounded-circle"></i>
-            </div>
-            <h3 > Vender ropa </h3>
-            <p >
-                Si no conseguis ropa linda a buen precio, 
-                podes comprar en WEATTIRE.
-            </p>
-          </div>
-          <div class=" col-sm-6 col-md-3  our-spec">
-              <div class="text-center">
-                  <i class="fas fa-truck rounded-circle"></i>
-              </div>
-              <h3 > Entrega rapida </h3>
-              <p >
-                 Ofrecemos un servicio de mensajeria exclusivo para cada cliente y tus pedidos llegaran a la brevedad.
-              </p>
-            </div>
-            <div class="col-sm-6 col-md-3  our-spec">
-                <div class="text-center">
-                    <i class="fas fa-headphones-alt rounded-circle"></i>
-                </div>
-                <h3 > Acceso y contacto las 24 horas</h3>
-                <p >
-                    La página siempre esta disponible y si tienen alguna pregunta les contestaremos lo antes posible. 
-                </p>
-              </div>
-              <div class="col-sm-6 col-md-3  our-spec">
-                  <div class="text-center">
-                    <i class="far fa-money-bill-alt rounded-circle"></i>
-                  </div>
-                  <h3 > Formas de pago </h3>
-                  <p >
-                     Podes pagar con cualquier tarjeta, ya sea de credito o debito. Además, podes depositar!
-                  </p>
-                </div>
-    </div>
-  </div>
+
+
+    <div class="contacto">
+
+      <h3 class="tipo2" data-aos="fade-up">Contactanos</h3>
+
+      <div class="d-flex" data-aos="fade-up">
+      <img class="imagen" src="local.jpg" alt="" data-aos="fade-up">
+
+      
+    <form id="form" class="formulario ms-5" data-aos="fade-up"
+  action=""
+  method="POST">
+  <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Nombre" data-aos="fade-up" name="nombre" required>
+  <input type="text" class="form-control mt-2" placeholder="Apellido" data-aos="fade-up" name="apellido" required>
+  <input type="email" name="email" class="form-control mt-2" placeholder="Mail" data-aos="fade-up" required>
+  <textarea name="message" class="form-control mt-4" rows="3" placeholder="Mensaje" data-aos="fade-up" required></textarea>
+  
+
+  <input type="submit" id="button" value="Enviar" data-aos="fade-up" class="btn boton mt-3 mb-3" style="margin-left: 45%;">
+  
+</form>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+</div>
 </div>
 
-
-
-
-<footer class="page-footer footer-bg">
-  <div class="inside-container">
-      <div class="row footer-padd">
-        <div class=" col-sm-6 col-lg-3 foot-col-padd">
-          <div class="foot-logo"><img src="logo.png" alt="" class="img-fluid"></div>
-        
-            <div>
-              <i class="fab fa-facebook-f foot-icon "></i>
-              <i class="fab fa-twitter foot-icon "></i>
-              <i class="fab fa-linkedin-in foot-icon "></i>
-              <i class="fab fa-tumblr  foot-icon"></i>
-              <i class="fab fa-vimeo-v  foot-icon"></i>
-              <i class="fab fa-pinterest-p foot-icon "></i>
-            </div>
-         </div>      
-         <div class=" col-sm-6 col-lg-3 pop-col">
-            <span>popular link</span>
-            <hr>
-            <div class="row">
-               <div class="col-6 pop-link">
-                 <a href="#">nosotros</a> 
-                 <a href="#">Mujeres</a>
-                 <a href="#">Hombres </a>
-      
-                  
-              </div>
-              <div class=" col-6  pop-link">
-                  <a href="#">contactanos </a> 
-                  <a href="#"> blog</a>
-                  <a href="#"> faq</a>
-                  <a href="#"> 404</a>
-              </div>
-            </div>
-           </div>
-        
-          <div class="col-sm-6 col-lg-3 pop-col ">
-              <span>contactanos</span> 
-                <hr>
-                <div class="row contact-row-margin">
-                   <a  class="link-head " href="#"><i class="fab fa-instagram  contact-icon" ></i> WEATTIRE </a> 
+          <div class="container martop">
+              <div class="row">
+                <div class="col" data-aos="zoom-in-right">
+                  <img class="img3"  src="perchero.jpeg" alt="">
                 </div>
-            
-           
-  
-                <div class="row contact-row-margin">
-                  <i class="fas fa-phone fa-rotate-90 contact-icon"></i>
-                  <p> +54 9 1154-7598</p>
+              
+
+                <div class="col" data-aos="zoom-in" style="background-image: url(./img/agua.jpg); background-position: center; background-size: cover; height: 300px;">
+                  <a id="myBtn"><button class="btn boton2">Confirmar compra</button></a>
+                  </div>
+                  <div id="myModal" class="modal">
+
+                    <div class="modal-content" style="align-items: center">
+                      <span class="close" style="display: none">&times;</span>
+                   
+             
+              
+</form>
+
+<button id="aceptar"  class="btn boton mt-4" style="width: 20%;">Confirmar</button>
+                    </div>
                 </div>
-                <div class="row contact-row-margin">
-                  <a  class="link-head " href="mailto: weattire@gmail.com"><i class="far fa-envelope contact-icon "> </i> weattire@gmail.com </a>
+              
                 
-                </div>
+               
+              </div>
+
+
+
+          </div>
+        </div>
+
+    <footer class="footer">
+
+      <div class="row mt-2">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <img src="logo.png" class="img-fluid rounded mx-auto img2">
+            
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" >
+           
+            <h3 class="text-uppercase fw-bold mt-4">
+            Contacto
+            </h3>
+            <p>
+              <strong> Dirección </strong> <br>
+              123 Anywhere St., Any City, State, Country 12345
+              <br>
+              <strong>Correo electrónico</strong> <br>
+              weattire@gmail.com
+              <br>
+            <strong>Teléfono</strong> <br>
+              1123098765
+            </p>
+           
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            
+            <h3 class="text-uppercase fw-bold mt-4">
+            Seguinos
+            </h3>
+            <div>
+                
+                <i class="fa fa-facebook ms-3" style="font-size: 25px;"></i>
+                
+                
+                <i class="fa fa-twitter ms-3" style="font-size: 25px;"></i>
+                
+                
+                <i class="fa fa-instagram ms-3" style="font-size: 25px;"></i>
+               
             </div>
-      </div>
+        </div>
+    </div>
+
    
-  </div>
-</footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="script.js">  </script>
+    </footer>
+
+
+
+
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
+    <script defer src="stock.js"></script>
+    <script defer src="modal.js"></script>
+    <script defer src="script.js"></script>
+
+<script>
+  const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_m1p0aul';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar';
+      swal({
+        title: "Mensaje enviado con exito",
+        icon: "success",
+        button: "Ok",
+      })
+    }, (err) => {
+      btn.value = 'Enviar';
+      swal({
+        title: "Error al enviar mensaje",
+        button: "Ok",
+      })
+    });
+});
+</script>
     
-  </body>
+
+
+</body>
 </html>
