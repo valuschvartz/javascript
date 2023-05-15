@@ -18,6 +18,8 @@ const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
+
+
 let carrito = []
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -109,6 +111,13 @@ const agregarAlCarrito = (servId) => {
     actualizarCarrito() 
     
     console.log (carrito)
+    div.innerHTML = `
+    <p>${serv.nombre}</p>
+    <p>Precio: $${serv.precio}</p>
+    <p>Cantidad: ${serv.cantidad}</p>
+    <button onclick="eliminarDelCarrito(${serv.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+    `
+
 }
 
 
@@ -130,27 +139,58 @@ const eliminarDelCarrito = (servId) => {
 
 const actualizarCarrito = () => {
     
-    contenedorCarrito.innerHTML = "" 
+  contenedorCarrito.innerHTML = "" 
+  let precioTotalCarrito = 0
+  let cantidadTotalCarrito = 0
+
+  carrito.forEach((serv) => {
+      const div = document.createElement('div')
+      div.className = ('servicioEnCarrito')
+      div.innerHTML = `
+      <p>${serv.nombre}</p>
+      <p>Precio: $${serv.precio}</p>
+      <p>Cantidad: ${serv.cantidad}</p>
+      <button onclick="eliminarDelCarrito(${serv.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+      `
+
+      contenedorCarrito.appendChild(div)
+      
+      localStorage.setItem('carrito', JSON.stringify(carrito))
+
+      precioTotalCarrito += serv.cantidad * serv.precio
+      cantidadTotalCarrito += serv.cantidad
+  })
   
-    carrito.forEach((serv) => {
-        const div = document.createElement('div')
-        div.className = ('servicioEnCarrito')
-        div.innerHTML = `
-        <p>${serv.nombre}</p>
-        <p>Precio: $${serv.precio}</p>
-        <button onclick="eliminarDelCarrito(${serv.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
-        `
-
-        contenedorCarrito.appendChild(div)
-        
-        localStorage.setItem('carrito', JSON.stringify(carrito))
-
-    })
-    
-    precioTotal.innerText = carrito.reduce((acc, serv) => acc + serv.cantidad * serv.precio, 0)
-    
+  precioTotal.innerText = precioTotalCarrito
+  cantidadTotal.innerText = cantidadTotalCarrito
 
 }
+const btnFinalizarCompra = document.getElementById('finalizar-compra')
+
+btnFinalizarCompra.addEventListener('click', () => {
+  swal({
+    title: "¿Desea confirmar la compra?",
+    text: "El carrito será vaciado",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((confirmarCompra) => {
+    if (confirmarCompra) {
+      swal("¡Compra confirmada!", {
+        icon: "success",
+      })
+      carrito.length = 0
+      actualizarCarrito()
+    } else {
+      swal("¡Compra cancelada!", {
+        icon: "error",
+      });
+    }
+  });
+})
+
+
 
 AOS.init({
     offset: 100, 
