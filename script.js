@@ -120,11 +120,6 @@ const agregarAlCarrito = (servId) => {
 
 }
 
-
-
-      
-
-
 const eliminarDelCarrito = (servId) => {
     const item = carrito.find((serv) => serv.id === servId)
 
@@ -165,6 +160,7 @@ const actualizarCarrito = () => {
   cantidadTotal.innerText = cantidadTotalCarrito
 
 }
+
 const btnFinalizarCompra = document.getElementById('finalizar-compra')
 
 btnFinalizarCompra.addEventListener('click', () => {
@@ -190,7 +186,15 @@ btnFinalizarCompra.addEventListener('click', () => {
   });
 })
 
+document.addEventListener('DOMContentLoaded', () => {
+  limpiarCarrito();
+});
 
+function limpiarCarrito() {
+  carrito = [];
+  actualizarCarrito();
+  localStorage.removeItem('carrito');
+}
 
 AOS.init({
     offset: 100, 
