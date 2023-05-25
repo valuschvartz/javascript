@@ -9,67 +9,61 @@ const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
 let carrito = []
+let data = [] // Variable para almacenar los datos de los servicios
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'))
-    actualizarCarrito()
-  } else {
-    limpiarCarrito()
+const getServicios = async () => {
+  try {
+    const response = await fetch("/servicios.json");
+    data = await response.json();
+    procesarServicios(data);
+  } catch (error) {
+    console.log(error);
   }
-
-  fetch('/servicios.json')
-    .then(response => response.json())
-    .then(data => {
-      Servicios = data
-      actualizarContenido()
-    })
-    .catch(error => {
-      console.error('Error al cargar los datos:', error)
-    })
-})
+};
 
 botonVaciar.addEventListener('click', () => {
   carrito.length = 0
   actualizarCarrito()
 })
 
-Servicios.forEach((servicio) => {
-  const div = document.createElement('div')
-  div.classList.add('servicio')
-  div.innerHTML = `
-    <img src=${servicio.img} alt="">
-    <h3>${servicio.nombre}</h3>
-    <p class="precioServicio">Precio: $${servicio.precio}</p>
-    <button id="agregar${servicio.id}" class="boton-agregar">Agregar</button>`;
+const procesarServicios = () => {
+  data.forEach((servicio) => {
+    const div = document.createElement('div')
+    div.classList.add('servicio')
+    div.innerHTML = `
+      <img src="${servicio.img}" alt="" />
+      <h3>${servicio.nombre}</h3>
+      <p class="precioServicio">Precio: $${servicio.precio}</p>
+      <button id="agregar${servicio.id}" class="boton-agregar">Agregar</button>`;
 
-  contenedorServicios.appendChild(div)
+    contenedorServicios.appendChild(div)
 
-  const boton = document.getElementById(`agregar${servicio.id}`)
+    const boton = document.getElementById(`agregar${servicio.id}`)
 
-  boton.addEventListener('click', () => {
-    agregarAlCarrito(servicio.id)
+    boton.addEventListener('click', () => {
+      agregarAlCarrito(servicio.id)
 
-    swal("¿Desea agregarlo a su compra?", {
-      buttons: {
-        cancel: "Cancelar",
-        catch: {
-          text: "Aceptar",
-          value: "catch",
+      swal("¿Desea agregarlo a su compra?", {
+        buttons: {
+          cancel: "Cancelar",
+          catch: {
+            text: "Aceptar",
+            value: "catch",
+          },
         },
-      },
-    }).then((value) => {
-      switch (value) {
-        case "catch":
-          swal({
-            text: "Se ha agregado a su compra",
-            button: "Ok",
-          })
-          break;
-      }
-    });
+      }).then((value) => {
+        switch (value) {
+          case "catch":
+            swal({
+              text: "Se ha agregado a su compra",
+              button: "Ok",
+            })
+            break;
+        }
+      });
+    })
   })
-})
+}
 
 aceptar.addEventListener('click', () => {
   swal({
@@ -89,19 +83,13 @@ const agregarAlCarrito = (servId) => {
       }
     })
   } else {
-    const item = Servicios.find((serv) => serv.id === servId)
+    const item = data.find((serv) => serv.id === servId)
     carrito.push(item)
   }
 
   actualizarCarrito()
 
   console.log(carrito)
-  div.innerHTML = `
-    <p>${serv.nombre}</p>
-    <p>Precio: $${serv.precio}</p>
-    <p>Cantidad: ${serv.cantidad}</p>
-    <button onclick="eliminarDelCarrito(${serv.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
-  `
 }
 
 const eliminarDelCarrito = (servId) => {
@@ -177,3 +165,5 @@ AOS.init({
   delay: 0,
   duration: 1000
 });
+
+getServicios();
